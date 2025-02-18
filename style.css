@@ -1,0 +1,424 @@
+*
+{
+	/*Propiedad que permite mantener el tamaño original*/
+	box-sizing: border-box;
+}
+
+body
+{
+	/*Asignación de la fuente de 'Google fonts'*/
+	font-family: "Roboto";
+
+	/*Se asigna a todos los elementos del body un tamaño general de fuente*/
+	font-size: 13px;
+	color: black;
+}
+
+a
+{
+	/*Cambia el comportamiento de los elementos, respetando el espacio interno*/
+	/*'inline' coloca los elementos uno al lado del otro*/
+	display: inline-block;
+}
+
+p
+{
+	color:black;	
+}
+
+header 
+{
+	/*Margen superior e inferior hacia adentro*/
+	padding: 15px 0;
+	/*Posición fija para el menú de opciones*/
+	position: fixed;
+	/*El menú siempre estará en la parte superior*/
+	top:0;
+	/*Debe ocupar un lugar en el espacio, para mostrar el contenido*/
+	width: 100%;
+	/*Se encontrará al lado izquierdo*/
+	left: 0;
+
+	/*Para que el 'header' esté delante o sobre la sección de 'inicio'*/
+	z-index: 2;
+
+	background-color: white;
+}
+
+header .container
+{
+	/*Se aprovecha el espacio y acomodar los elementos*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/*Se modifica la clase 'logo' que está dentro de la clase 'container' que está dentro de 'header'*/
+header .container .logo
+{
+	width: 100px;
+}
+
+
+/*Se especifica que solamente los elemtos 'a' que se encuentren dentro
+de un elemento 'nav'*/
+header .container nav a
+{
+	color: red;
+	
+	/*Quitar subrayado del menú de opciones*/
+	text-decoration: none;
+	
+	/*Asignar más espacio entre los elementos del menú
+	Espacio externo*/
+	margin: 0 15px;
+}
+
+.boton
+{
+	text-align: center;
+	/*Se quita el subrayado*/
+	text-decoration:none;
+	padding: 15px 20px;
+	border: none;
+}
+
+.boton.boton-rojo
+{
+	color: white;
+	background-color: red;
+	font-size: 16px;
+	/*Profundidad de fuente*/
+	font-weight: bold;
+}
+
+.boton.boton-blanco
+{
+	color: red;
+	background-color: white;
+	font-size: 20px;
+	/*Profundidad de fuente*/
+	font-weight: bold;
+	border: 1px solid red;
+}
+
+.boton.boton-negro
+{
+	color: white;
+	background-color: black;
+	font-size: 16px;
+	/*Profundidad de fuente*/
+	font-weight: bold;
+}
+
+.boton.boton-negro:hover
+{
+	color: black;
+	background-color: white;
+	
+}
+
+.seccion
+{
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.cuadrado-perfecto
+{
+	/*Abarca todo el ancho del contendor*/
+	width: 100%;
+	/*Se define un alto en función al 'padding'*/
+	padding-bottom: 100%;
+	/*El elemento 'Padre' se define con posición 'relativa'*/
+	position: relative;
+}
+
+.cuadrado-perfecto img
+{
+	/*Abarca todo el ancho del cuadrado perfecto*/
+	width: 100%;
+	/*Abarca todo el alto generado por el padding-bottom del cuadrado perfecto*/
+	height: 100%;
+	/*Propiedad que funciona solo para etiquetas 'img' y 'video', similar a propiedad
+	'background-size'.
+	Cubrirá todo el espacio con la imagen*/
+	object-fit: cover;
+	/*Se centra la imagen*/
+	object-position: center;
+	/*Se define la posición absoluta*/
+	position: absolute;
+	/*Se posiciona en un punto estándar (puede variar)*/
+	top:0;
+	left: 0;
+}
+
+.container
+{
+	width: 1140px;
+	margin: 0 auto;
+	padding-right: 15px;
+	padding-left: 15px;
+	/*Se asigna posición relativa para que el formulario esté encima del mapa*/
+	position: relative;
+}
+
+.container-fluid
+{
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	/*Se asigna posición relativa para que el formulario esté encima del mapa*/
+	position: relative;
+}
+
+.row
+{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.columna
+{
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+/*Se trabaja con porcentajes, porque no se conoce el dato de la resolución de la pantalla*/
+.columna-33
+{
+	/*Se divide toda la pantalla en 3 partes*/
+	width: 33.33%;
+}
+
+.columna-41
+{
+	width: 41.66%;
+}
+
+.columna-50
+{
+	width: 50%;
+}
+
+.empujar-50
+{
+	margin-left: 50%;
+}
+
+.empujar-58
+{
+	margin-left: 58.33%;
+}
+
+.empujar-66
+{
+	margin-left: 66.66%;
+}
+
+.empujar-0;
+{
+	margin-left: 0;
+}
+
+#inicio
+{
+	/*Posición que permite mover los elementos en base a otras propiedades*/
+	position: relative;
+}
+
+#inicio img
+{
+	/*La imagen ocupa todo el ancho de pantalla*/
+	width: 100%;
+	display: block;
+}
+
+#inicio .bloque-inicio
+{
+	position: absolute;
+	/*Centrado respecto a la parte superior del elemento 'Padre'*/
+	top:40%;
+	left: 50%;
+	
+	/*Se asigna un ancho al bloque*/
+	width: 400px;
+	
+	/*Se centra todos los textos*/
+	text-align: center;
+	
+	/*Regresamos la mitad de lo que vale el ancho del bloque*/
+	margin-left: -200px ;
+}
+
+#inicio .bloque-inicio h1
+{
+	color: white;
+	/*Cambiar tamaño de la fuente*/
+	font-size: 35px;
+}
+
+#inicio .bloque-inicio p
+{
+	color: white;
+	/*Cambiar tamaño de la fuente*/
+	font-size: 16px;
+}
+
+#nosotros
+{
+	background-image: url(img/latas.jpg);
+	background-size: cover;
+	color: white;
+	text-align: center;
+}
+
+#nosotros p
+{
+	color: white;
+	text-align: center;
+	font-size: 16px;
+	/*margin: 0;*/
+}
+
+#servicios .bloque-servicio
+{
+	/*Se asigna un borde*/
+	border:1px solid grey;
+}
+
+#servicios .bloque-servicio .bloque-img-servicio
+{
+
+}
+
+#servicios .bloque-servicio .bloque-img-servicio img
+{
+	/*Se ajusta la imagen al contenedor*/
+	width: 100%;
+}
+
+/*Selección de dos clases*/
+#servicios .bloque-servicio .bloque-img-servicio.cuadrado-perfecto
+{
+	/*Relación de 16:9*/
+	padding-bottom: 56.25%;
+}
+
+#servicios .bloque-servicio .bloque-contenido-servicio
+{
+	/*Al texto se aplica una cantidad de pixeles de padding*/
+	padding: 15px;
+}
+
+#servicios .bloque-servicio .bloque-contenido-servicio h3
+{	/*Se modifica las característica de los títulos 'Servicio' */
+
+	/*Se quita el margen superior*/
+	margin-top: 0px;
+	/*Se aumenta el tamaño de letra*/
+	font-size: 25px;
+}
+
+#galeria h4
+{
+	padding-right: 15px;
+	padding-left: 15px;
+	text-align: center;
+	/*El 'Padre' es cuadrado perfecto*/
+	position: absolute;
+	top: 40%;
+	color: white;
+	font-size: 18px;
+	/*Abarcará todo el ancho y estará centrado*/
+	width:100%;
+}
+
+/*Para establecer en blanco y negro las imágenes de 'Galería'*/
+#galeria img
+{
+	/*La propiedad posee el rango de [0-1]*/
+	filter: grayscale(1);
+}
+
+/*Al colocar el puntero del mouse sobre la imagen, la misma
+retomará su color original*/
+#galeria .cuadrado-perfecto:hover img
+{
+	/*Al realizar el evento, la imagen no poseerá el filtro de blanco y negro*/
+	filter: grayscale(0);
+}
+
+/* Se ocultará el '<h4>' (letras de la imagen) cuando se
+coloque el puntero sobre la imagen*/
+#galeria .cuadrado-perfecto:hover h4
+{
+	/*Al realizar el evento, la imagen no poseerá el filtro de blanco y negro*/
+	display: none;
+}
+
+#contactenos
+{
+	position: relative;
+}
+
+#contactenos iframe
+{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	/*El formulario le da el alto al iframe*/
+	height: 100%;
+	/*Blanco y negro*/
+	/*filter: grayscale(1);*/
+}
+
+/*Color de fondo del formulario*/
+#contactenos form
+{
+	padding: 60px;
+	background-color: red;
+}
+
+/*Formulario ocupará 100% del contenedor y tendrá un margen inferior*/
+#contactenos form .form-block
+{
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+/*Se asigna estilo a los campos del formulario*/
+#contactenos form .form-block .form-control
+{
+	display: block;
+	height: 40px;
+	font-size: 16px;
+	border: 1px solid grey;
+	width: 100%;
+	/*Se asigna un padding para que el texto que se escriba no esté junto*/
+	padding: 5px 10px;
+}
+
+/*Se asignará estilo al campo de tipo 'text-area'*/
+#contactenos form .form-block textarea
+{
+	display: block;
+	height: 100px;
+	font-size: 16px;
+	border: 1px solid grey;
+	width: 100%;
+	/*Se asigna un padding para que el texto que se escriba no esté junto*/
+	padding: 5px 10px;
+}
+
+
+/*Se insertan clases juntas para seleccionar un elemento que posee ambas clases*/
+#contactenos form .form-block.bloque-ultimo
+{
+	margin-bottom: 0;
+
+}
+
