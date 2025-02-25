@@ -19,6 +19,9 @@ a
 	/*Cambia el comportamiento de los elementos, respetando el espacio interno*/
 	/*'inline' coloca los elementos uno al lado del otro*/
 	display: inline-block;
+
+	/*Se quita el texto azul y subrayado de los links*/
+	text-decoration: none;
 }
 
 p
@@ -72,6 +75,83 @@ header .container nav a
 	/*Asignar más espacio entre los elementos del menú
 	Espacio externo*/
 	margin: 0 15px;
+}
+
+header .container .hamb
+{
+	/*Cuando se ingrese por otro tipo de pantalla (que no sea de celular)
+	no se verá el menú de tipo 'hamburgesa'*/
+	display: none;
+}
+
+/*Asignación de estilo al 'footer' que posee la clase 'seccion'*/
+footer
+{
+	background-color: black;
+	color: white;
+	padding-top: 60px;
+}
+
+footer .barra-footer
+{
+	background-color: grey;
+	text-align: center;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+footer .logo-footer
+{
+	width: 100%;
+
+}
+
+footer p
+{
+	/*Color blanco al texto del footer contenido en <p>*/
+	color: white;
+	margin-bottom: 30px;
+}
+
+/*Asignación de estilo a los links del footer*/
+footer a
+{
+	color: white;
+}
+
+/*Asignación de estilo a 'ul'*/
+footer ul
+{
+	padding-left: 0px;
+	/*Se quitan las viñetas*/
+	list-style: none;
+	margin: 0px;
+}
+
+footer ul li
+{
+	/*Separación entre los links del footer*/
+	margin-bottom: 10px;
+}
+
+footer .redes
+{
+	/*Se incrementa el tamño de los íconos de las RRSS*/
+	font-size: 21px;
+	/*Para que los íconos estén uno al lado de otro*/
+	display: flex;
+	/*Separación entre los íconos de manera uniforme*/
+	/*justify-content: space-between;*/
+
+}
+
+/*Margen entre los íconos*/
+footer .redes a
+{
+	margin: 0 7.5px;
+	
 }
 
 .boton
@@ -184,6 +264,11 @@ header .container nav a
 {
 	padding-right: 15px;
 	padding-left: 15px;
+}
+
+.columna-25
+{
+	width: 25%;
 }
 
 /*Se trabaja con porcentajes, porque no se conoce el dato de la resolución de la pantalla*/
@@ -422,3 +507,141 @@ coloque el puntero sobre la imagen*/
 
 }
 
+/*Configuración de los @media queries (Dispositos móviles)*/
+
+/*Hasta 767 px de ancho del dispositivo*/
+@media(max-width: 767px)
+{
+	body
+	{
+		/*Todos los textos tendrán 15px de tamaño*/
+		font-size: 15px;
+	}
+
+	header .container nav
+	{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background-color: white;
+		padding-top: 80px;
+		padding-bottom: 80px;
+		padding-right: 15px;
+		padding-left: 15px;
+		top: 0;
+		left: 0;
+		display: flex;
+		/*El menú aparecerá en columna, uno debajo del otro*/
+		flex-direction: column;
+		/*Se traslada el elemento a la parte visible del viewport,
+		Se modificarán todas las propiedades*/
+		transition: all 0.4s ease;
+
+		/*Se agrega la transformación
+		Se alejará en el eje 'x' el 100%, es decir no estará en el viewport*/
+		transform: translateX(100%) ;
+	}
+
+	header .container nav a
+	{
+		font-size: 30px;
+		margin: 15px 0px;
+	}
+
+	/*Sólo será visible el menú de tipo 'hamburguesa' en dispositivos móviles*/
+	header .container .hamb
+	{
+		/*Se agrega estilo al menú 'hamburguesa'*/
+		display: block;
+		font-size: 40px;
+		color: red;
+	}
+
+	form .boton.boton-negro
+	{
+		/*Para dispositivos móviles el botón tendrá 100% de ancho*/
+		width: 100%;
+	}
+
+	footer
+	{
+		/*Se centran todos los textos del footer*/
+		text-align: center;
+	}
+
+	footer .logo-footer
+	{
+		width: 50%;
+	}
+
+	footer .redes
+	{
+		/*Para centrar los íconos de las redes sociales*/
+		justify-content: center;
+	}
+
+	/*Cuando nos encontremos en este dispositivo el container será 100%*/
+	.container
+	{
+		width: 100%;
+	}
+
+	.columna-mobile-100
+	{
+		/*Esta clase sólo funcionará para dispositivos móviles*/
+		width: 100%;
+	}
+
+	.columna-mobile-50
+	{
+		/*Esta clase sólo funcionará para dispositivos móviles*/
+		width: 50%;
+	}
+
+	/*El formulario estará al 100% sin espacios para dispositivos móviles*/
+	.empujar-mobile-0
+	{
+		margin-left: 0;
+	}
+
+	/*El formulario estará al 100% sin espacios para dispositivos móviles*/
+	.sinpadding-mobile
+	{
+		padding:0;
+	}
+
+	/*Se agrega estilo a la sección 'inicio*/
+	#inicio
+	{
+		/* '100vh' se refiere al alto del dispositivo (viewport) */
+		height: 100vh;
+	}
+
+	#inicio img
+	{
+		/* La imagen principal cubrirá todo el alto
+		de la pantalla del dispositivo*/
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	#servicios .bloque-servicio
+	{
+		margin-bottom: 15px;
+	}
+
+	#contactenos
+	{
+		padding: 0;
+	}
+
+	#contactenos iframe
+	{
+		position: relative;
+		height: 50vh;
+	}
+
+
+
+}
